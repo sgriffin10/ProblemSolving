@@ -40,3 +40,5 @@ end_grade = 89
 increase = (end_grade-beg_grade)/beg_grade * 100
 
 print('The grade rose by {:04.1f}%.'.format(increase))
+
+print('hello')
