@@ -14,3 +14,9 @@ if age >= 21:
     print('yes, you can.')
 else:
     print('sorry, you can\'t.')
+
+XINTONG = str('SONG')
+print(XINTONG + ('XINTONG'*100))
+
+bool(-1)
+
