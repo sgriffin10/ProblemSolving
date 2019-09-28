@@ -19,6 +19,8 @@
 #sum of all odd numbers is 250,000
 #sum of even numbers is 250,500
 
+#Exercise 2
+
 # def countdown(n):
 #     while n>0:
 #         print(n)
@@ -63,7 +65,8 @@
 #         n += 1
 # print(sum)        
 
-  
+#Exercise 3  
+
 # def mysqrt(a):
 #     epsilon = 0.00000000000000001
 #     x = a
