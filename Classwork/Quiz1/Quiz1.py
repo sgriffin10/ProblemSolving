@@ -61,21 +61,21 @@ Write a function with loops that computes the average of all cubes of all the od
 """
 
 
-def calculate_avg(n):
-    result1 = 0 
-    count = 0
-    for i in range(1, n+1, 2)
-        count += 1
-        result1 += i**3
-    return (result1/count)
+# def calculate_avg(n):
+#     result1 = 0 
+#     count = 0
+#     for i in range(1, n+1, 2)
+#         count += 1
+#         result1 += i**3
+#     return (result1/count)
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-print(calculate_avg(1))
+# print(calculate_avg(1))
 # # expect: 1
-print(calculate_avg(10))
+# print(calculate_avg(10))
 # # expect: 245
 
 
@@ -92,15 +92,15 @@ If n is 5, expected output is:
 """
 
 
-# def print_numbers(n):
-#     for i in range(n):
-#         print(str(n-i) * (i+1))
+def print_numbers(n):
+    for i in range(n):
+        print((str(n-i)+' ') * (i+1))
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print_numbers(5)
+print_numbers(5)
 # ## expect:
 # ## 5
 # ## 4 4
@@ -108,7 +108,7 @@ If n is 5, expected output is:
 # ## 2 2 2 2
 # ## 1 1 1 1 1
 
-# print_numbers(9)
+print_numbers(9)
 ## expect:
 ## 9
 ## 8 8
