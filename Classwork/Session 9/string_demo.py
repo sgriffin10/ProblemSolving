@@ -9,11 +9,11 @@ letter = team [0]
 
 # team = "New England Patriots"
 
-# index = 0
-# while index < len(team):
-#     letter = team[index]
-#     print(letter)
-    # index = index + 1
+index = 0
+while index < len(team):
+    letter = team[index]
+    print(letter)
+    index = index + 1
 
 # for letter in team:
 #     print(letter)
@@ -32,7 +32,7 @@ letter = team [0]
 # print(team[12:])
 # print(team[::2])
 
-# team[12:20] = "Seahawks"
+# team[12:20] = "Seahawks" # cant do this
 
 # new_team = team[:12] + "Giants"
 # print(new_team)
@@ -47,12 +47,12 @@ letter = team [0]
 #     return -1
 # print(find(team,'E'))
 
-def count(s, letter):
-    counter = 0
-    for c in s:
-        if c == letter:
-            counter += 1
-    return counter
-print(count(team, 'a'))
-print(count(team, 'e'))
+# def count(s, letter):
+#     counter = 0
+#     for c in s:
+#         if c == letter:
+#             counter += 1
+#     return counter
+# print(count(team, 'a'))
+# print(count(team, 'e'))
 
