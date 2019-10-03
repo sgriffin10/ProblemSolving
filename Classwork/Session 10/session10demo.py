@@ -1,0 +1,1 @@
+print(('sgriffin4@babson.edu').split('@')[0])
