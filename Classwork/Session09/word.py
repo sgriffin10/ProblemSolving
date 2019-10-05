@@ -170,34 +170,49 @@ def is_abecedarian(word):
 
 
 def find_abecedarian_words():
-    """
-    returns the number of abecedarian words and the longest abecedarian word
-    """
     f = open('Classwork/session09/words.txt')
-    num_of_words_abecedarian = 0
+    counter = 0
+    current_longest_word = ''
     for line in f:
         word = line.strip()
-        index = ''
-        if is_abecedarian(word) == True:
-            num_of_words_abecedarian += 1
-        # if len(index) < len(word) and is_abecedarian(word) == True:
-        #     index = word
-        # print(word)
-        # # if is_abecedarian(word) and len(word) > 6:
-        # #     print(word)
-    return num_of_words_abecedarian 
+        if is_abecedarian(word):
+            # print(word)
+            counter += 1
+            if len(word) > len(current_longest_word):
+                current_longest_word = word
+    return counter, current_longest_word
 
-# print(find_abecedarian_words())
+print(find_abecedarian_words())
 
-def find_longest_abecedarian_words():
-    f = open('Classwork/session09/words.txt')
-    index = ''
-    for line in f:
-        word = line.strip()
-        if is_abecedarian(word) == True:
-            if len(word) > len(index):
-                index = word
-    return index
+# def find_abecedarian_words():
+#     """
+#     returns the number of abecedarian words and the longest abecedarian word
+#     """
+#     f = open('Classwork/session09/words.txt')
+#     num_of_words_abecedarian = 0
+#     for line in f:
+#         word = line.strip()
+#         index = ''
+#         if is_abecedarian(word) == True:
+#             num_of_words_abecedarian += 1
+#         # if len(index) < len(word) and is_abecedarian(word) == True:
+#         #     index = word
+#         # print(word)
+#         # # if is_abecedarian(word) and len(word) > 6:
+#         # #     print(word)
+#     return num_of_words_abecedarian 
+
+# # print(find_abecedarian_words())
+
+# def find_longest_abecedarian_words():
+#     f = open('Classwork/session09/words.txt')
+#     index = ''
+#     for line in f:
+#         word = line.strip()
+#         if is_abecedarian(word) == True:
+#             if len(word) > len(index):
+#                 index = word
+#     return index
 
 # print('The longest abecedarian word is', find_longest_abecedarian_words(), 'and the amount of abecedarian words is', find_abecedarian_words())
 
