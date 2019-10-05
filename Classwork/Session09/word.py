@@ -165,28 +165,69 @@ def is_abecedarian(word):
 
 
 
-print(is_abecedarian('abs'))
-print(is_abecedarian('college'))
+# print(is_abecedarian('abs'))
+# print(is_abecedarian('college'))
 
 
 def find_abecedarian_words():
     """
     returns the number of abecedarian words and the longest abecedarian word
     """
-
+    f = open('Classwork/session09/words.txt')
+    num_of_words_abecedarian = 0
+    for line in f:
+        word = line.strip()
+        index = ''
+        if is_abecedarian(word) == True:
+            num_of_words_abecedarian += 1
+        # if len(index) < len(word) and is_abecedarian(word) == True:
+        #     index = word
+        # print(word)
+        # # if is_abecedarian(word) and len(word) > 6:
+        # #     print(word)
+    return num_of_words_abecedarian 
 
 # print(find_abecedarian_words())
 
+def find_longest_abecedarian_words():
+    f = open('Classwork/session09/words.txt')
+    index = ''
+    for line in f:
+        word = line.strip()
+        if is_abecedarian(word) == True:
+            if len(word) > len(index):
+                index = word
+    return index
+
+# print('The longest abecedarian word is', find_longest_abecedarian_words(), 'and the amount of abecedarian words is', find_abecedarian_words())
 
 def is_abecedarian_using_recursion(word):
     """
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
+    if len(word) <= 1:
+        return True
+    if word [0] > word [1]:
+        return False
+    return is_abecedarian_using_recursion(word[1:])
 
+# print(is_abecedarian_using_recursion('Babson'))
+# print(is_abecedarian_using_recursion('abbnos'))
 
 def is_abecedarian_using_while(word):
     """
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
+    index = 0
+    while index < len(word)-1:
+        if word[index + 1] < word[index]:
+            return False
+        index += 1
+    return True
+    word[index] 
+
+# print(is_abecedarian_using_while('babson')) 
+# print(is_abecedarian_using_while('abbnos')) 
+
