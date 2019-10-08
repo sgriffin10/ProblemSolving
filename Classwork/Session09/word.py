@@ -182,7 +182,7 @@ def find_abecedarian_words():
                 current_longest_word = word
     return counter, current_longest_word
 
-print(find_abecedarian_words())
+# print(find_abecedarian_words())
 
 # def find_abecedarian_words():
 #     """
@@ -235,14 +235,14 @@ def is_abecedarian_using_while(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    index = 0
-    while index < len(word)-1:
-        if word[index + 1] < word[index]:
+    i = 0
+    while i < len(word)-1:
+        if word[i + 1] < word[i]:
             return False
-        index += 1
+        i += 1
     return True
-    word[index] 
+    word[i] 
 
-# print(is_abecedarian_using_while('babson')) 
-# print(is_abecedarian_using_while('abbnos')) 
+print(is_abecedarian_using_while('babson')) 
+print(is_abecedarian_using_while('abbnos')) 
 
