@@ -1,9 +1,11 @@
 import urllib.request
 import json
 
+'''feel free to enter any city you want provided the city features on the API and that you have the proper country code'''
+
 APIKEY = '68b6d3a4e115c1ccccd6c47e7a52a914'
-city = 'ottawa'
-country_code = 'can'
+city = (input('Please enter city: '))
+country_code = (input('Please enter country code: '))
 url = f'http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&APPID={APIKEY}'
 city_upper = city.upper()
 
