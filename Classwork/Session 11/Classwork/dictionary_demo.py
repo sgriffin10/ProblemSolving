@@ -10,7 +10,7 @@ def histogram(s):
         # print(d)
     return d
 
-h = histogram("bookkeeper")
+# h = histogram("bookkeeper")
 # print(h)
 
 def print_hist(h):
@@ -18,9 +18,9 @@ def print_hist(h):
     for c in h:
         print(c, h[c])
 
-with open('Classwork/Session 11/she_loves_you.txt') as f:
+with open('Classwork/Session 11/Classwork/she_loves_you.txt') as f:
     lyrics = f.read().split()
-    print(lyrics)
+    # print(lyrics)
 
 beatles = histogram(lyrics)
 print_hist(beatles)

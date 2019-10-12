@@ -16,7 +16,7 @@ grades['Emely'] = 90
 grades = {'Emely':90, 'Krishna':80, 'Patrick':65}
 # print(grades)
 
-names = dict()
+# names = dict()
 
 for name in names:
     import random
