@@ -150,6 +150,18 @@ def has_adjacent_duplicates(s):
 # print(has_adjacent_duplicates('abca'))
 # print(has_adjacent_duplicates('abbc'))
 
+def uses_three_vowels(word):
+    num_of_words_three_vowels = 0
+    for letter in word:
+        if (letter == 'a') or (letter == 'e') or (letter == 'i') or (letter == 'o') or (letter == 'u'):
+            num_of_words_three_vowels += 1
+        if num_of_words_three_vowels >= 3:
+            return True
+ 
+# print(uses_three_vowels('utopia'))
+# print(uses_three_vowels('utop'))
+# print(uses_three_vowels('gaoxing'))
+
 def main():
     t = [[1, 2], [3], [4, 5, 6]]
     print(nested_sum(t))
@@ -173,8 +185,8 @@ def main():
     print(has_duplicates('abba'))
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
 
