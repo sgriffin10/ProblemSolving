@@ -53,7 +53,7 @@ def cold_call():
     d = {}
     delimiter = ', '
     t = NAMES_STRING.split(delimiter)
-    for i in range(99):
+    for i in range(100):
         c = random.randint(0,19)
         name = t[c]
         d[name] = d.get(name, 0) + 1
