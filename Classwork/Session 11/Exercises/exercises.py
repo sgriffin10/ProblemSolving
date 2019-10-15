@@ -1,23 +1,42 @@
 # Exercise 4.1 
 
-random_dict = dict()
+# random_dict = dict()
 def create_dict():
+    words = {}
     f = open('Classwork/Session 11/Exercises/words.txt')
     for line in f:
-        words = line.strip()
-        random_dict[words] = words
-    return random_dict
+        word = line.strip()
+        words[word] = 0
+    return words
 
 test_dict = create_dict()
 
-def check_dict(word, dictionary):
-    if word in dictionary:
-        return True
+
+
+def check_word(word, d):
+    return word in d
+
+if __name__ == "__main__":
+    test_dict = create_dict
+    # for w in test_dict:
+#   print(w, test_dict[w])
+
+#   for w, v in test_dict.items():
+#   print(w, v)
+    word = input('Enter a word:')
+    if check_word(word, test_dict):
+        print(f'yes, the word {word} is in the dictionary')
     else:
-        return False
+        print(f'Sorry, the word {word} is not here')
+
+# def check_dict(word, dictionary):
+#     if word in dictionary:
+#         return True
+#     else:
+#         return False
 
 # print(check_dict('hello', test_dict))
-# print(check_dict('merppppp', test_dict))
+# print(check_dict('zhi', test_dict))
 
 #Exercise 4.2
 
