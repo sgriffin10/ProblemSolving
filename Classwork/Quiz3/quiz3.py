@@ -43,32 +43,27 @@ import random
 
 random.seed(42)
 NAMES_STRING = 'Krishna, Emely, Demi, Gregory, Spencer, Myat, Carmen, Victoria, Jinna, Nico, Olivia, Jenny, Rachel, Shaun, Brian, David, Patrick, Shirley, Arteen, Julie'
-delimiter = ', '
-t = NAMES_STRING.split(delimiter)
+
 # print(t)
 
-def cold_call(s):
+def cold_call():
     """
     Return a dictionary of name: positive integer pairs
     """
-    d = dict()
-    for i in range(101):
-        name = random.choice(s)
-        for name in s:
-            if name not in s:
-                d[name] = 1
-            else:
-                d[name] += 1
-        return d
-
-
-
+    d = {}
+    delimiter = ', '
+    t = NAMES_STRING.split(delimiter)
+    for i in range(99):
+        c = random.randint(0,19)
+        name = t[c]
+        d[name] = d.get(name, 0) + 1
+    return d
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
 
-print(cold_call(t))
+# print(cold_call())
 ## Expected output:
 ## {'Gregory': 6, 'Krishna': 4, 'Jinna': 9, 'Victoria': 9, 'Spencer': 4, 'Shirley': 7, 'Demi': 8, 'Arteen': 4, 'Shaun': 3, 'Emely': 5, 'Carmen': 7, 'Patrick': 1, 'Julie': 4, 'Brian': 5, 'Myat': 4, 'Meiling': 5, 'Xintong': 6, 'Jenny': 6, 'Nico': 2, 'David': 1}
 
