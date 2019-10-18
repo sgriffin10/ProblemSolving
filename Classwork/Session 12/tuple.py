@@ -20,7 +20,7 @@ a,b,local = tel.split('-')
 # print(a)
 
 tel = '+1-123-345-6533'
-international, *_, local = tel.split('-')
+# international, *_, local = tel.split('-')
 # print(international, local)
 # international, local = tel.split('-')
 
@@ -93,8 +93,8 @@ for letter in name:
 #string & tuple 
 
 name_t = tuple(name)
-# print(name_t)
-# print(''.join(name_t))
+print(name_t)
+print(''.join(name_t))
 
 #string & set
 
@@ -115,5 +115,5 @@ t = [1,2,3,4,5,6,7,8]
 # print(dict(zip(name,t)))
 
 name_d2 = dict(zip(name, t))
-print(name_d2.items())
+# print(name_d2.items())
 
