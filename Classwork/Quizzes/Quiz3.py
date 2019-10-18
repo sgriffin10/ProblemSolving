@@ -129,36 +129,32 @@ def get_current_temp():
     """
     Return current temperature in Fahrenheit from api.openweathermap.org
     """
-    pass
+    import urllib.request
+    import json
 
-import urllib.request
-import json
+    APIKEY = '68b6d3a4e115c1ccccd6c47e7a52a914'
+    city = (input('Please enter city: '))
+    country_code = (input('Please enter country code: '))
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&APPID={APIKEY}'.replace(' ', '%20')
+    print(url)
+    city_upper = city.upper()
 
-APIKEY = '68b6d3a4e115c1ccccd6c47e7a52a914'
-city = (input('Please enter city: '))
-country_code = (input('Please enter country code: '))
-url = f'http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&APPID={APIKEY}'
-city_upper = city.upper()
+    f = urllib.request.urlopen(url)
+    response_text = f.read().decode('utf-8')
+    response_data = json.loads(response_text)
 
-f = urllib.request.urlopen(url)
-response_text = f.read().decode('utf-8')
-response_data = json.loads(response_text)
-
-
-# How do we get current temperature?
-
-main = response_data['main']
-temp = main['temp']
-celsius_temp = (temp - 273.15)
-
-
-print('The current temperature in', city_upper, f'is {celsius_temp:.1f} degrees celsius.')
+    # How do we get current temperature?
+    main = response_data['main']
+    temp = main['temp']
+    celsius_temp = (temp - 273.15)
+    # print('The current temperature in', city_upper, f'is {celsius_temp:.1f} degrees celsius.')
+    return celsius_temp
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(get_current_temp())
+print(get_current_temp())
 
 ## Expected output:
 ## Your professor is not god. He did not know what temperature would be at this moment.
