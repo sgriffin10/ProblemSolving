@@ -1,6 +1,6 @@
 # Exercise 2.1
 
-# import operator
+import operator
 # word = input("Enter a word:")
 
 # letter_d = dict()
@@ -30,7 +30,7 @@ def anagram(l):
 if __name__ == '__main__':
     d = anagram(anagram_list)
 
-    # sorted_items = sorted(d.items(), key = lambda item: len(item[1]), reverse = True) #for part 2.3
+    sorted_items = sorted(d.items(), key = lambda item: len(item[1]), reverse = True) #for part 2.3
     # new_dict = dict(sorted_items[:]) #for part 2.3
     for words in d.values(): #change this between new_dict and d
         if len(words) > 1: 

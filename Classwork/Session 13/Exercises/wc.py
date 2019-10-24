@@ -1,0 +1,14 @@
+'''
+i 
+cant
+dm
+ever
+ever
+again
+found
+out
+she
+was
+a
+man
+'''

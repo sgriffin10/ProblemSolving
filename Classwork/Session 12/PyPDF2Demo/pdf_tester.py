@@ -6,8 +6,7 @@ def PDFmerge(pdfs, output):
       
     # appending pdfs one by one 
     for pdf in pdfs: 
-        with open(pdf, 'rb') as f: 
-            pdfMerger.append(f) 
+            pdfMerger.append(pdf) 
           
     # writing combined pdf to output pdf file 
     with open(output, 'wb') as f: 
@@ -15,9 +14,7 @@ def PDFmerge(pdfs, output):
   
 def main(): 
     # pdf files to merge 
-    pdfs = ["Classwork/Session 12/Session1CourseIntroduction.pdf", "Classwork/Session 12/Session2.pdf","Desktop/Session 4 - Competition & Markets.pdf"]
-
-#'Session 4 - Competition & Markets.pdf','Session 5 - Resources and Capabilities.pdf','Session 6 - Corporate Strategy and Internal Ecosystems.pdf','Session 7 - Business Models.pdf','Session 8 - External Ecosystems and Multi-sided Markets.pdf','Session 9 - Corporate Social Responsibility.pdf','Session 10 - Globalization.pdf','Session 11 - Implementation and Talent Management.pdf','Session 12 - Business Writing.pdf' 
+    pdfs = ["Classwork/Session 12/Session1.pdf", "Classwork/Session 12/Session2.pdf","Classwork/Session 12/Session3.pdf","Classwork/Session 12/Session4.pdf","Classwork/Session 12/Session5.pdf","Classwork/Session 12/Session6.pdf","Classwork/Session 12/Session7.pdf","Classwork/Session 12/Session8.pdf","Classwork/Session 12/Session9.pdf","Classwork/Session 12/Session10.pdf","Classwork/Session 12/Session11.pdf","Classwork/Session 12/Session12.pdf"]
      
     # output pdf file name 
     output  = 'combinedasmmaterials.pdf'
