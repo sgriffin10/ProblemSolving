@@ -1,4 +1,4 @@
-from Point1 import *
+from correct_point1 import *
 import copy
 
 
@@ -13,21 +13,65 @@ def point_in_circle(point, circle):
     point: Point object
     circle: Circle object
     """
-
-
+    d = distance_between_points(point, circle.center)
+    # print(d)
+    return d <= circle.radius
 
 def rect_in_circle(rect, circle):
     """Checks whether the corners of a rect fall in/on a circle.
     rect: Rectangle object
     circle: Circle object
     """
+    p = copy.copy(rect.corner)
+    print_point(p)
+    if not point_in_circle(p, circle):
+        return False
+
+    p.x += rect.width
+    print_point(p)
+    if not point_in_circle(p, circle):
+        return False
+
+    p.y += rect.height
+    print_point(p)
+    if not point_in_circle(p, circle):
+        return False
+
+    p.x -= rect.width
+    print_point(p)
+    if not point_in_circle(p, circle):
+        return False
+
+    return True
+
 
 def rect_circle_overlap(rect, circle):
     """Checks whether any corners of a rect fall in/on a circle.
     rect: Rectangle object
     circle: Circle object
     """
-    
+    p = copy.copy(rect.corner)
+    print_point(p)
+    if point_in_circle(p, circle):
+        return True
+
+    p.x += rect.width
+    print_point(p)
+    if point_in_circle(p, circle):
+        return True
+
+    p.y += rect.height
+    print_point(p)
+    if point_in_circle(p, circle):
+        return True
+
+    p.x -= rect.width
+    print_point(p)
+    if point_in_circle(p, circle):
+        return True
+
+    return False
+
 
 def main():
     box = Rectangle()

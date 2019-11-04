@@ -142,21 +142,21 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # p1 = Point()
-    # p1.x = 3
-    # p1.y = 4
+    p1 = Point()
+    p1.x = 3
+    p1.y = 4
 
-    # import copy
-    # p2 = copy.copy(p1)
+    import copy
+    p2 = copy.copy(p1)
 
-    # print_point(p1)
-    # print_point(p2)
+    print_point(p1)
+    print_point(p2)
     
-    # print(id(p1))
-    # print(id(p2))
-    # print(p1 is p2)
+    print(id(p1))
+    print(id(p2))
+    print(p1 is p2)
 
-    # print(p1.x is p2.x)
-    # print(p1 == p2)
+    print(p1.x is p2.x)
+    print(p1 == p2)
 
-    # print(dir(p1))
+    print(dir(p1))

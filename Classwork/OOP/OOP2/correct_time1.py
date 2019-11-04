@@ -4,19 +4,19 @@ class Time:
     """
 
 
-time = Time()
-time.hour = 3
-time.minute = 6
-time.second = 30
+# time = Time()
+# time.hour = 3
+# time.minute = 12
+# time.second = 30
 
-print(time.hour, time.minute, time.second)
+# print(time.hour, time.minute, time.second)
 
-later = Time()
-later.hour = time.hour
-later.minute = time.minute + 5
-later.second = time.second
+# later = Time()
+# later.hour = time.hour
+# later.minute = time.minute + 5
+# later.second = time.second
 
-print(later.hour, later.minute, later.second)
+# print(later.hour, later.minute, later.second)
 
 
 """"""""""""""""""""""""""""""""""""
@@ -30,30 +30,23 @@ def print_time(t):
     """
     print(f'{t.hour:02d}:{t.minute:02d}:{t.second:02d}')
 
-print_time(time)
-print_time(later)
+
+# print_time(time)
+# print_time(later)
 
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
-    # if t1.hour > t2.hour:
-    #     return True
-    # elif t1.hour == t2.hour and t1.minute > t2.minute:
-    #     return True
-    # elif t1.hour == t2.hour and t1.minute == t2.minute and t1.second > t2.second:
-    #     return True 
-    # return False
-
     return t1.hour > t2.hour or (t1.hour == t2.hour and t1.minute > t2.minute) or (t1.hour == t2.hour and t1.minute == t2.minute and t1.second > t2.second)
-        
-
-print(is_after(time, later))
-print(is_after(later, time))
 
 
-# """"""""""""""""""""""""""""""""""""
-# # Prototyping
-# """"""""""""""""""""""""""""""""""""
+# print(is_after(time, later))
+# print(is_after(later, time))
+
+
+""""""""""""""""""""""""""""""""""""
+# Prototyping
+""""""""""""""""""""""""""""""""""""
 
 
 def add_time(t1, t2):
@@ -68,38 +61,37 @@ def add_time(t1, t2):
     sum.second = t1.second + t2.second
     return sum
 
-new_time = add_time(time, later)
-print_time(new_time)
 
 def add_time2(t1, t2):
     """Adds two time objects.
     t1, t2: Time
     returns: Time
-    TODO: improve this function
+    TODO: improve this function # DONE!
     """
     sum = Time()
     sum.hour = t1.hour + t2.hour
     sum.minute = t1.minute + t2.minute
     sum.second = t1.second + t2.second
     if sum.second >= 60:
+        sum.second -= 60
         sum.minute += 1
-        sum.second = sum.second - 60
     if sum.minute >= 60:
+        sum.minute -= 60
         sum.hour += 1
-        sum.minute = sum.minute - 60
-        
+    return sum
+
+
 # Uncomment below for testing
-start = Time()
-start.hour = 9
-start.minute = 45
-start.second = 0
+# start = Time()
+# start.hour = 9
+# start.minute = 45
+# start.second = 0
 
-duration = Time()
-duration.hour = 1
-duration.minute = 35
-duration.second = 0
+# duration = Time()
+# duration.hour = 1
+# duration.minute = 35
+# duration.second = 0
 
-# done = Time()
 # done = add_time2(start, duration)
 # print_time(done)
 
@@ -116,35 +108,25 @@ def increment(time, seconds):
         time.minute -= 60
         time.hour += 1
 
-print_time(time)
-increment(time, 100)
-# """"""""""""""""""""""""""""""""""""
-# # Exercise 3
-# """"""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""
+# Exercise 3
+""""""""""""""""""""""""""""""""""""
 
 
-# def increment_2(time, seconds):
+def increment_2(time, seconds):
     """return a Time object after incrementing"""
     result = Time()
-    result.hour = time.hour
-    result.minute = time.minute
-    
-    result.second = time.second
-    
+    result.hour, result.minute, result.second = time.hour, time.minute, time.second
     result.second += seconds
-    
     if result.second >= 60:
-        result.minute += 1
         result.second -= 60
-    
+        result.minute += 1
     if result.minute >= 60:
-        result.hour += 1
         result.minute -= 60
+        result.hour += 1
+    return result
 
-print_time(time)
-incremented_time = increment(time, 50)
-print_time(time)
-print_time(incremented_time)
 
 """"""""""""""""""""""""""""""""""""
 # Designed Development
@@ -171,7 +153,6 @@ def int_to_time(seconds):
 
 
 def add_time_2(t1, t2):
-    ''' t1, t2 are time objects'''
     seconds = time_to_int(t1) + time_to_int(t2)
     return int_to_time(seconds)
 
@@ -183,13 +164,12 @@ def add_time_2(t1, t2):
 
 def substract_time(t1, t2):
     """Substracts two time objects.
-   
     t1, t2: Time
-
     returns: Time
     """
-    diff_in_seconds = time_to_int(t1) - time_to_int(t2)
-    return int_to_time(diff_in_seconds)
+    seconds = time_to_int(t1) - time_to_int(t2)
+    return int_to_time(seconds)
+
 
 # print_time(substract_time(done, duration))
 # print_time(substract_time(time, later))
@@ -225,20 +205,11 @@ def add_time3(t1, t2):
     return int_to_time(seconds)
 
 
-done = add_time2(start, duration)
-print_time(done)
-another = add_time2(done, duration)
-print_time(another)
+# done = add_time3(start, duration)
+# print_time(done)
+# another = add_time3(done, duration)
+# print_time(another)
 
-time1 = Time()
-time1.hour = 1
-time1.minute = 60
-time1.second = 59
-
-try:
-    print_time(add_time3(time1, duration))
-except ValueError as e:
-    print('Error: ', e)
 
 """"""""""""""""""""""""""""""""""""
 # Exercise 5
@@ -247,11 +218,15 @@ except ValueError as e:
 
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
-    return int_to_time = time_to_int(t1) * factor
+    if not valid_time(t1):
+        raise ValueError('invalid Time object in mul_time, stupid!')
+    seconds = time_to_int(t1) * factor
+    return int_to_time(int(seconds))
 
-print_time(duration)
-print('after multiplied by 5:', end=' ')
-print_time(mul_time(duration, 5))
+
+# print_time(duration)
+# print('after multiplied by 5:', end=' ')
+# print_time(mul_time(duration, 5))
 
 
 def main():
@@ -299,5 +274,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    pass
+    main()
