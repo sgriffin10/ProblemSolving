@@ -171,6 +171,7 @@ def int_to_time(seconds):
 
 
 def add_time_2(t1, t2):
+    ''' t1, t2 are time objects'''
     seconds = time_to_int(t1) + time_to_int(t2)
     return int_to_time(seconds)
 
@@ -182,10 +183,13 @@ def add_time_2(t1, t2):
 
 def substract_time(t1, t2):
     """Substracts two time objects.
+   
     t1, t2: Time
+
     returns: Time
     """
-
+    diff_in_seconds = time_to_int(t1) - time_to_int(t2)
+    return int_to_time(diff_in_seconds)
 
 # print_time(substract_time(done, duration))
 # print_time(substract_time(time, later))
@@ -208,7 +212,7 @@ def valid_time(time):
     return True
 
 
-def add_time2(t1, t2):
+def add_time3(t1, t2):
     """Adds two time objects.
     t1, t2: Time
     returns: Time
@@ -221,11 +225,20 @@ def add_time2(t1, t2):
     return int_to_time(seconds)
 
 
-# done = add_time2(start, duration)
-# print_time(done)
-# another = add_time2(done, duration)
-# print_time(another)
+done = add_time2(start, duration)
+print_time(done)
+another = add_time2(done, duration)
+print_time(another)
 
+time1 = Time()
+time1.hour = 1
+time1.minute = 60
+time1.second = 59
+
+try:
+    print_time(add_time3(time1, duration))
+except ValueError as e:
+    print('Error: ', e)
 
 """"""""""""""""""""""""""""""""""""
 # Exercise 5
@@ -234,11 +247,11 @@ def add_time2(t1, t2):
 
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
+    return int_to_time = time_to_int(t1) * factor
 
-
-# print_time(duration)
-# print('after multiplied by 5:', end=' ')
-# print_time(mul_time(duration, 5))
+print_time(duration)
+print('after multiplied by 5:', end=' ')
+print_time(mul_time(duration, 5))
 
 
 def main():
