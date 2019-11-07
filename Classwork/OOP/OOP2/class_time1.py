@@ -169,12 +169,12 @@ print_time(incremented_time)
 """""" """""" """""" """""" """""" """"""
 
 
-def time_to_int(time):
+def time_to_int(self):
     """Computes the number of seconds since midnight.
     time: Time object.
     """
-    minutes = time.hour * 60 + time.minute
-    seconds = minutes * 60 + time.second
+    minutes = self.hour * 60 + self.minute
+    seconds = minutes * 60 + self.second
     return seconds
 
 
