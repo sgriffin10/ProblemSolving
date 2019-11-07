@@ -48,7 +48,7 @@ class Candidate:
             winning_states += state
         if winning_states == '':
             return '{} has not won any state yet.'.format(self.name)
-        return f"{self.name} has won {', '.join(self.winning_states)}" 
+        return f"{self.name} has won {', '.join(self.winning_states)}." 
 
     
     def __gt__(self, other):
