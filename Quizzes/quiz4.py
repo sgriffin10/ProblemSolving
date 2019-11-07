@@ -45,11 +45,10 @@ class Candidate:
         """
         winning_states = ''
         for state in self.winning_states:
-            winning_states += state + ' '
+            winning_states += state
         if winning_states == '':
             return '{} has not won any state yet.'.format(self.name)
-        return '{} has won {}.'.format(self.name, winning_states)
-        # return f"{self.name} has won {'. ',join(str.winning_states)}" #plz give me credit for this thanks
+        return f"{self.name} has won {', '.join(self.winning_states)}" 
 
     
     def __gt__(self, other):
