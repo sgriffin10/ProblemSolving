@@ -93,8 +93,8 @@ for letter in name:
 #string & tuple 
 
 name_t = tuple(name)
-print(name_t)
-print(''.join(name_t))
+# print(name_t)
+# print(''.join(name_t))
 
 #string & set
 
@@ -114,6 +114,6 @@ t = [1,2,3,4,5,6,7,8]
 #dictionary and tuples
 # print(dict(zip(name,t)))
 
-name_d2 = dict(zip(name, t))
+# name_d2 = dict(zip(name, t))
 # print(name_d2.items())
 
