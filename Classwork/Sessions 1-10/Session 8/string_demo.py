@@ -7,13 +7,13 @@ letter = team [0]
 # print(team[-1])
 # print(team[-20])
 
-# team = "New England Patriots"
+team = "New England Patriots"
 
-index = 0
-while index < len(team):
-    letter = team[index]
-    print(letter)
-    index = index + 1
+# index = 0
+# while index < len(team):
+#     letter = team[index]
+#     print(letter)
+#     index = index + 1
 
 # for letter in team:
 #     print(letter)
@@ -38,21 +38,21 @@ while index < len(team):
 # print(new_team)
 # print(team)
 
-# def find(word, letter):
-#     index = 0 
-#     while index < len(word):
-#         if word[index] == letter:
-#             return index
-#         index = index + 1
-#     return -1
-# print(find(team,'E'))
+def find(word, letter):
+    index = 0 
+    while index < len(word):
+        if word[index] == letter:
+            return index
+        index = index + 1
+    return -1
+print(find(team,'E'.lower())) #can change to lower
 
-# def count(s, letter):
-#     counter = 0
-#     for c in s:
-#         if c == letter:
-#             counter += 1
-#     return counter
-# print(count(team, 'a'))
-# print(count(team, 'e'))
+def count(s, letter):
+    counter = 0
+    for c in s:
+        if c == letter:
+            counter += 1
+    return counter
+print(count(team, 'a'))
+print(count(team, 'e'))
 

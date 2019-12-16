@@ -5,7 +5,7 @@
 
 # for line in fin:
 #     word = line.strip()
-    # print(word)
+#     print(word)
 
 
 def find_long_words():
@@ -122,6 +122,7 @@ def uses_all(word, required):
     takes a word and a string of required letters, and that returns True if
     the word uses all the required letters at least once.
     """
+    # for letter in required if letter not in word return False:
     for letter in required:
         if letter not in word:
             return False
@@ -241,7 +242,7 @@ def is_abecedarian_using_while(word):
             return False
         i += 1
     return True
-    word[i] 
+    # word[i] 
 
 print(is_abecedarian_using_while('babson')) 
 print(is_abecedarian_using_while('abbnos')) 
